@@ -1,0 +1,12 @@
+@mixin bg($img){
+	background: url("../images/#{$img}");  
+	width: image-width("build/images/#{$img}");  
+	height: image-height("build/images/#{$img}");  
+} 
+
+@mixin border-radius($angle){
+	border-radius:$angle;
+	-webkit-border-radius:$angle;
+	-moz-border-radius:$angle;
+}
+

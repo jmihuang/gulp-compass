@@ -1,0 +1,67 @@
+
+
+
+@function type-scale($level) {
+  @return map-get($type-scale, $level);
+}
+
+@function line-height($level) {
+  @return map-get($line-height, $level);
+}
+
+@mixin type-setting($level: 0) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+}
+
+$type-scale: (
+  -1: 0.75rem,  // small text
+  0: 1rem,      // body text
+  1: 1.333rem,  // large text
+  2: 1.777rem,   // main heading
+  3: 2rem       // large heading
+);
+
+
+$base-font-size: 1rem;
+$base-line-height: $base-font-size * 2;
+
+$line-height: (
+  -1: $base-line-height,
+  0: $base-line-height,
+  1: $base-line-height * 1.5,
+  2: $base-line-height * 2,
+  3: $base-line-height * 3
+);
+
+
+.content-text {
+  line-height:2rem;
+}
+.field{
+   margin-bottom: 5rem;
+}
+
+.paragraph,.content-text {
+   margin-bottom: 2rem;
+   color:colors(gray);
+}
+
+
+.heading-1 { @include type-setting(3); }
+.heading-2 { @include type-setting(2); }
+.heading-3 { @include type-setting(1); }
+.heading-4 { @include type-setting(0); }
+.heading-5 { @include type-setting(-1); }
+.small{@include type-setting(-1);}
+.paragraph{@include type-setting(-1);}
+
+.content-text { @include type-setting(0); }
+
+
+
+
+
+
+
+
