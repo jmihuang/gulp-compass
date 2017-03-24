@@ -28,16 +28,18 @@ var _cssDestPath = './dist/style/';
 gulp.task('styles', function () {
     return gulp.src(_sassDiskPath) // sass 來源路徑
         .pipe(compass({
-            css: './dist/style', // compass 輸出位置
-            sass: './sass',      // sass 來源路徑
-            style: 'compressed',  // CSS 處理方式，預設 nested（expanded, nested, compact, compressed）
-            comments: false,      // 是否要註解，預設(true)
+            config_file: './config.rb',
+            css : 'dist/style', // compass 輸出位置
+            sass: 'sass',      // sass 來源路徑
+            image: 'dist/images',    // 圖片來源路徑
+            style: 'nest',       // CSS 處理方式，預設 nested（expanded, nested, compact, compressed）
+            comments: false,     // 是否要註解，預設(true)
             logging  : false,
             sourcemap: true
         }))
-    .pipe(autoprefixer())
     .pipe(gulp.dest(_cssDestPath)) // 輸出位置(非必要)
     .pipe(rename({suffix: '.min'}))
+    .pipe(autoprefixer())
     .pipe(minifyCSS({}))
     .pipe(gulp.dest(_cssDestPath))
     .pipe(connect.reload())

@@ -1,0 +1,108 @@
+
+
+.index-bg{
+  background-image: url("../images/rmziuif2s2q-photo-nic-co-uk-nic.jpg");
+  @include background-size(cover);
+  background-position-x:1200px;
+  background-repeat:no-repeat;
+  
+}
+
+
+
+@media #{$large-and-up}{
+  .about-container{
+      display:none;
+  }
+}
+.title{
+	letter-spacing:10px;
+	margin:$base-font-size*1;
+}
+
+
+.aphbet{
+  letter-spacing:50px;
+  font-size:130px;
+  color:colors('gray');
+}
+.title-box{
+  font-family:'Microsoft JhengHei';
+  width:200px;
+  height:200px;
+  text-align:center;
+  line-height:60px;
+  font-size:24px;
+  letter-spacing:15px;
+  padding:40px;
+  box-sizing: border-box;
+  position:absolute;
+  top:20%;
+  right:15%;
+}
+@media #{$medium-and-down} {
+  .title-box{
+    position:static;
+    margin-left:15px;
+  }  
+}
+
+.about-wrapper{
+   padding:$base-font-size*3 0;
+}
+@media #{$medium-and-down} {
+  .about-t{
+     height:initial;
+  }
+  .aphbet{
+      font-size: 60px; 
+   }
+   .about-wrapper{
+      padding:initial;
+   }
+}
+.text-title{
+   color:colors('gray')
+}
+
+.text-des{
+  margin:25px 0 0 25px;
+  line-height:$base-font-size*2;
+  font-family:'Microsoft JhengHei';
+}
+.text-y{
+  display:inline-block;
+  color:darken(colors('main-yellow'),30%);
+  width:100px;
+  margin-right:20px;
+}
+@media #{$medium-and-down} {
+  .text-y{
+   display:block;
+ }
+}
+
+.scroll-spy{
+  position:fixed;
+  bottom:30%;
+  right:10%;
+  li:not(:last-child){
+    width:2px;
+    height:30px;
+    background:colors('gray');
+    margin-bottom:2px;
+    &.active{
+       background:colors('main-yellow');
+    }
+  }
+
+}
+
+@media #{$large-and-up} {
+  .scroll-spy{
+    right:30%;
+  }
+}
+
+
+

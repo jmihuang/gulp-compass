@@ -5,6 +5,7 @@
   @return map-get($type-scale, $level);
 }
 
+// Again, we can make a helper function:
 @function line-height($level) {
   @return map-get($line-height, $level);
 }
